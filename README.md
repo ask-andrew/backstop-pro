@@ -1,0 +1,2 @@
+# backstop-pro
+Extension info
