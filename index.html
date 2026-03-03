@@ -38,24 +38,24 @@
   }
 
   .page {
-    max-width: 860px;
+    max-width: 900px;
     margin: 0 auto;
     padding: 0 24px 80px;
   }
 
-  /* ── HERO ─────────────────────────────────────────── */
+  /* ── HERO SECTION ───────────────────────────────────── */
   .hero {
-    padding: 72px 0 56px;
+    padding: 80px 0 60px;
     text-align: center;
     position: relative;
   }
 
   .hero-glow {
     position: absolute;
-    top: 0; left: 50%;
+    top: -100px; left: 50%;
     transform: translateX(-50%);
-    width: 600px; height: 300px;
-    background: radial-gradient(ellipse at center top, rgba(16,185,129,0.15) 0%, transparent 70%);
+    width: 800px; height: 500px;
+    background: radial-gradient(circle at center, rgba(16,185,129,0.1) 0%, transparent 70%);
     pointer-events: none;
   }
 
@@ -98,10 +98,10 @@
   }
 
   .hero h1 {
-    font-size: clamp(28px, 5vw, 44px);
+    font-size: clamp(32px, 6vw, 48px);
     font-weight: 900;
     letter-spacing: -0.03em;
-    line-height: 1.15;
+    line-height: 1.1;
     margin-bottom: 20px;
     color: var(--text);
   }
@@ -112,18 +112,30 @@
   }
 
   .hero-sub {
-    font-size: 16px;
+    font-size: 17px;
     color: var(--text2);
-    max-width: 520px;
-    margin: 0 auto 36px;
+    max-width: 580px;
+    margin: 0 auto 40px;
     line-height: 1.7;
   }
 
-  .cta-row {
-    display: flex;
-    gap: 12px;
-    justify-content: center;
-    flex-wrap: wrap;
+  /* ── HERO IMAGE CONTAINER ─────────────────────────── */
+  .hero-visual {
+    position: relative;
+    max-width: 860px;
+    margin: 50px auto 0;
+    border-radius: 24px;
+    padding: 1px;
+    background: linear-gradient(135deg, rgba(16,185,129,0.4) 0%, transparent 100%);
+    box-shadow: 0 40px 80px -12px rgba(0,0,0,0.7), 0 20px 40px -20px rgba(16,185,129,0.4);
+    overflow: hidden;
+  }
+
+  .hero-image {
+    width: 100%;
+    display: block;
+    border-radius: 23px;
+    filter: brightness(0.95) contrast(1.05);
   }
 
   .btn-primary {
@@ -133,7 +145,7 @@
     font-weight: 800;
     letter-spacing: 0.08em;
     text-transform: uppercase;
-    padding: 14px 28px;
+    padding: 16px 32px;
     border-radius: 100px;
     border: none;
     cursor: pointer;
@@ -141,25 +153,12 @@
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    transition: background 0.2s;
+    transition: transform 0.2s, background 0.2s;
+    box-shadow: 0 10px 20px rgba(16,185,129,0.2);
   }
-  .btn-primary:hover { background: var(--emerald2); }
-
-  .btn-ghost {
-    background: transparent;
-    color: var(--text2);
-    font-size: 13px;
-    font-weight: 700;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    padding: 14px 28px;
-    border-radius: 100px;
-    border: 1px solid var(--slate2);
-    cursor: pointer;
-    text-decoration: none;
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
+  .btn-primary:hover { 
+    background: var(--emerald2);
+    transform: translateY(-2px);
   }
 
   /* ── SECTION LABEL ────────────────────────────────── */
@@ -169,7 +168,8 @@
     letter-spacing: 0.3em;
     text-transform: uppercase;
     color: var(--emerald);
-    margin-bottom: 12px;
+    margin: 80px 0 12px;
+    text-align: center;
   }
 
   /* ── STORY ────────────────────────────────────────── */
@@ -294,12 +294,6 @@
     flex-shrink: 0;
   }
 
-  .step-card.pro .step-num {
-    background: var(--lavender-dim);
-    border-color: var(--lavender-border);
-    color: var(--lavender);
-  }
-
   .step-title {
     font-size: 14px;
     font-weight: 800;
@@ -325,47 +319,6 @@
     line-height: 1.7;
   }
 
-  /* approval control mini-cards */
-  .control-modes {
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-    margin-top: 12px;
-  }
-
-  .mode-row {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    background: var(--slate);
-    border-radius: 10px;
-    padding: 8px 12px;
-  }
-
-  .mode-dot {
-    width: 8px; height: 8px;
-    border-radius: 50%;
-    flex-shrink: 0;
-  }
-
-  .mode-dot.green  { background: var(--emerald); }
-  .mode-dot.yellow { background: #f59e0b; }
-  .mode-dot.blue   { background: #60a5fa; }
-
-  .mode-label {
-    font-size: 11px;
-    font-weight: 800;
-    color: var(--text);
-    letter-spacing: 0.05em;
-    min-width: 90px;
-  }
-
-  .mode-desc {
-    font-size: 10px;
-    color: var(--text3);
-    font-weight: 500;
-  }
-
   /* ── COMPARISON TABLE ─────────────────────────────── */
   .table-wrap {
     background: var(--navy2);
@@ -381,9 +334,7 @@
     font-size: 13px;
   }
 
-  thead tr {
-    background: var(--slate);
-  }
+  thead tr { background: var(--slate); }
 
   thead th {
     padding: 14px 20px;
@@ -395,262 +346,104 @@
     color: var(--text2);
   }
 
-  thead th:first-child { color: var(--text2); }
-  thead th:nth-child(2) {
-    color: var(--emerald);
-  }
-
-  tbody tr {
-    border-top: 1px solid var(--slate);
-  }
-
-  tbody tr:hover { background: rgba(255,255,255,0.02); }
+  tbody tr { border-top: 1px solid var(--slate); }
 
   tbody td {
     padding: 14px 20px;
     color: var(--text2);
     font-weight: 500;
-    vertical-align: middle;
   }
 
   tbody td:first-child {
     color: var(--text);
     font-weight: 700;
-    font-size: 13px;
   }
 
-  .check {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    color: var(--emerald);
-    font-weight: 800;
-    font-size: 13px;
-  }
-
-  .cross {
-    color: var(--text3);
-    font-size: 12px;
-  }
-
-  .partial {
-    color: #f59e0b;
-    font-size: 12px;
-  }
-
-  /* ── FEATURES GRID ────────────────────────────────── */
-  .features {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 12px;
-    margin-bottom: 24px;
-  }
-
-  .feat-card {
-    background: var(--navy2);
-    border: 1px solid var(--slate2);
-    border-radius: var(--radius);
-    padding: 22px;
-  }
-
-  .feat-icon {
-    width: 36px; height: 36px;
-    border-radius: 10px;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 17px;
-    margin-bottom: 12px;
-  }
-
-  .feat-icon.green {
-    background: var(--emerald-dim);
-    border: 1px solid var(--emerald-border);
-  }
-
-  .feat-icon.purple {
-    background: var(--lavender-dim);
-    border: 1px solid var(--lavender-border);
-  }
-
-  .feat-title {
-    font-size: 13px;
-    font-weight: 800;
-    color: var(--text);
-    margin-bottom: 6px;
-    letter-spacing: -0.01em;
-  }
-
-  .feat-title .pro-badge {
-    display: inline-block;
-    font-size: 8px;
-    font-weight: 800;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: var(--lavender);
-    background: var(--lavender-dim);
-    border: 1px solid var(--lavender-border);
-    padding: 2px 6px;
-    border-radius: 4px;
-    margin-left: 6px;
-    vertical-align: middle;
-  }
-
-  .feat-desc {
-    font-size: 12px;
-    color: var(--text2);
-    line-height: 1.6;
-  }
-
-  /* ── QUOTE ────────────────────────────────────────── */
-  .pitch-quote {
-    background: linear-gradient(135deg, var(--navy2) 0%, rgba(16,185,129,0.05) 100%);
-    border: 1px solid var(--emerald-border);
-    border-radius: var(--radius);
-    padding: 36px 44px;
-    text-align: center;
-    margin-bottom: 24px;
-  }
-
-  .pitch-quote p {
-    font-size: 18px;
-    font-weight: 700;
-    color: var(--text);
-    line-height: 1.6;
-    letter-spacing: -0.01em;
-  }
-
-  .pitch-quote p em {
-    color: var(--emerald);
-    font-style: normal;
-  }
+  .check { color: var(--emerald); font-weight: 800; }
+  .cross { color: var(--text3); }
 
   /* ── CTA FOOTER ───────────────────────────────────── */
   .cta-footer {
     background: var(--navy2);
     border: 1px solid var(--slate2);
     border-radius: var(--radius);
-    padding: 48px;
+    padding: 60px 48px;
     text-align: center;
+    margin-top: 40px;
   }
 
   .cta-footer h2 {
-    font-size: 28px;
+    font-size: 32px;
     font-weight: 900;
-    letter-spacing: -0.02em;
     margin-bottom: 12px;
   }
 
   .cta-footer p {
-    font-size: 14px;
+    font-size: 15px;
     color: var(--text2);
-    margin-bottom: 28px;
-    max-width: 420px;
+    margin-bottom: 32px;
+    max-width: 480px;
     margin-left: auto;
     margin-right: auto;
   }
 
-  .cta-footer .fine {
-    font-size: 11px;
-    color: var(--text3);
-    margin-top: 16px;
-    letter-spacing: 0.05em;
-  }
-
-  /* ── DIVIDER ──────────────────────────────────────── */
-  .divider {
-    height: 1px;
-    background: linear-gradient(to right, transparent, var(--slate2), transparent);
-    margin: 40px 0;
-  }
-
-  /* ── PAUSE LOGIC STRIP ────────────────────────────── */
-  .pause-strip {
-    display: flex;
-    gap: 10px;
-    margin-top: 14px;
-    flex-wrap: wrap;
-  }
-
-  .pause-pill {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    background: var(--slate);
-    border: 1px solid var(--slate2);
-    border-radius: 100px;
-    padding: 5px 12px;
-    font-size: 10px;
-    font-weight: 700;
-    color: var(--text2);
-    letter-spacing: 0.05em;
-  }
-
-  .pause-pill .dot {
-    width: 6px; height: 6px;
-    background: var(--rose);
-    border-radius: 50%;
-  }
-
   @media (max-width: 640px) {
     .steps { grid-template-columns: 1fr; }
-    .features { grid-template-columns: 1fr 1fr; }
     .stat-strip { grid-template-columns: 1fr; }
-    .story { padding: 28px 24px; }
-    .pitch-quote { padding: 28px 24px; }
-    .cta-footer { padding: 32px 24px; }
+    .hero h1 { font-size: 32px; }
   }
 </style>
 </head>
 <body>
 <div class="page">
 
-  <!-- HERO -->
   <div class="hero">
     <div class="hero-glow"></div>
+    
     <div class="logo-row">
       <div class="logo-icon">🪢</div>
       <div class="logo-wordmark">Backstop</div>
     </div>
+
     <div class="hero-tag">Beta — Chrome Extension for Gmail</div>
-    <h1>Communication insurance that<br><em>babysits your emails</em><br>until you get a reply.</h1>
+    
+    <h1><em>Communication insurance</em><br>that babysits your emails.</h1>
     <p class="hero-sub">You sent the email. It was good. They just didn't reply. Backstop watches the threads that matter and prepares your next move — before the moment passes.</p>
+    
     <div class="cta-row">
       <a href="BackstopHowTo.html" class="btn-primary">⬇ Add to Chrome — Free</a>
     </div>
+
+    <div class="hero-visual">
+        <img src="hero-bg.png" alt="Backstop Dashboard - Communication Insurance" class="hero-image">
+    </div>
   </div>
 
-  <!-- STORY -->
   <div class="section-label">Why this exists</div>
   <div class="story">
-    <p>I spent years as a CSM and leading teams of CSMs. We were organized, diligent, and genuinely cared about our clients. But <strong>threads still slipped</strong> — not because anyone was careless, but because Gmail was never built to track the silence after you hit send.</p>
-    <p>When you manage ten people, a missed reply isn't just awkward. It becomes a client escalating to your VP because their CSM "never got back to them." The email was there. The intention was there. <strong>The follow-up just never happened.</strong></p>
-    <p>I looked for a tool that would watch a thread, draft a nudge if they went quiet, and ask me before sending anything — lightweight enough for a single important email, not a CRM migration project.</p>
-    <div class="punchline">It didn't exist. So I built it.</div>
+    <p>I spent years as a CSM and leading teams of CSMs. We were organized, diligent, and genuinely cared about our clients. But <strong>threads still slipped</strong> — not because anyone was careless, but because Gmail was never built to track the silence after you hit send[cite: 10, 11, 12].</p>
+    <p>When you manage ten people, a missed reply isn't just awkward. It becomes a client escalating to your VP because their CSM "never got back to them." The email was there. The intention was there. <strong>The follow-up just never happened</strong>[cite: 13, 14, 15].</p>
+    <p>I looked for a tool that would watch a thread, draft a nudge if they went quiet, and ask me before sending anything — lightweight enough for a single important email, not a CRM migration project[cite: 16].</p>
+    <div class="punchline">It didn't exist. So I built it[cite: 17].</div>
   </div>
 
-  <!-- STATS -->
   <div class="stat-strip">
     <div class="stat-card">
       <div class="num">8.4%</div>
-      <div class="label">Reply rate from the first follow-up — the highest in any sequence</div>
+      <div class="label">Reply rate from the first follow-up — the highest in any sequence [cite: 18, 19]</div>
     </div>
     <div class="stat-card">
       <div class="num">3×</div>
-      <div class="label">Increase in spam complaints after a 4th follow-up email</div>
+      <div class="label">Increase in spam complaints after a 4th follow-up email [cite: 20, 21]</div>
     </div>
     <div class="stat-card">
       <div class="num">1</div>
-      <div class="label">The number of follow-ups most professionals actually send before giving up</div>
+      <div class="label">The number of follow-ups most professionals actually send before giving up [cite: 22, 23]</div>
     </div>
   </div>
 
-  <div class="pitch-quote">
-    <p>The problem isn't that you need to follow up <em>more</em>.<br>It's that the one follow-up that matters never gets sent.<br>Backstop makes sure it happens — <em>on your terms.</em></p>
-  </div>
-
-  <!-- HOW IT WORKS -->
   <div class="section-label">How it works</div>
   <div class="steps">
-
     <div class="step-card">
       <div class="step-top">
         <div class="step-num">01</div>
@@ -659,7 +452,7 @@
           <div class="step-subtitle emerald">One-click activation</div>
         </div>
       </div>
-      <div class="step-body">Send an important email. Click <strong style="color:var(--text)">Babysit</strong>. Choose your pace — Aggressive, Standard, or Relaxed. Backstop maps out a 3-stage sequence and monitors the thread in the background. No to-do items. No calendar reminders.</div>
+      <div class="step-body">Send an important email. Click <strong>Babysit</strong>. Choose your pace — Aggressive, Standard, or Relaxed. Backstop maps out a 3-stage sequence and monitors the thread in the background[cite: 28, 30, 31].</div>
     </div>
 
     <div class="step-card">
@@ -670,74 +463,26 @@
           <div class="step-subtitle emerald">Full preview before anything fires</div>
         </div>
       </div>
-      <div class="step-body">Three steps. For each one: read the draft, shuffle template variants, edit freely, or hit <strong style="color:var(--text)">AI Refine</strong> to polish that specific step with Gemini or Mistral. Every planned send shows the exact date, time, and timezone.</div>
+      <div class="step-body">Three steps. For each one: read the draft, shuffle template variants, edit freely, or hit <strong>AI Refine</strong> to polish that specific step with Gemini or Mistral[cite: 33, 35].</div>
     </div>
-
-    <div class="step-card">
-      <div class="step-top">
-        <div class="step-num">03</div>
-        <div>
-          <div class="step-title">Approval Queue</div>
-          <div class="step-subtitle emerald">You set the level of control</div>
-        </div>
-      </div>
-      <div class="step-body">Every nudge lands in your Approvals tab before it moves. You decide how much oversight you want:</div>
-      <div class="control-modes">
-        <div class="mode-row">
-          <div class="mode-dot green"></div>
-          <div class="mode-label">Approve All</div>
-          <div class="mode-desc">Full sign-off on every message</div>
-        </div>
-        <div class="mode-row">
-          <div class="mode-dot yellow"></div>
-          <div class="mode-label">Approve Some</div>
-          <div class="mode-desc">Your rules, your exceptions</div>
-        </div>
-        <div class="mode-row">
-          <div class="mode-dot blue"></div>
-          <div class="mode-label">Autopilot</div>
-          <div class="mode-desc">Surfaces exceptions only</div>
-        </div>
-      </div>
-      <div class="pause-strip">
-        <div class="pause-pill"><span class="dot"></span> Auto-pauses on reply</div>
-        <div class="pause-pill"><span class="dot"></span> OOO detection</div>
-        <div class="pause-pill"><span class="dot"></span> Multi-person threads</div>
-      </div>
-    </div>
-
-    <div class="step-card pro">
-      <div class="step-top">
-        <div class="step-num" style="background:var(--lavender-dim);border-color:var(--lavender-border);color:var(--lavender)">04</div>
-        <div>
-          <div class="step-title">Ghost Hunt <span style="font-size:9px;font-weight:800;letter-spacing:0.15em;text-transform:uppercase;color:var(--lavender);background:var(--lavender-dim);border:1px solid var(--lavender-border);padding:2px 6px;border-radius:4px;margin-left:4px">PRO</span></div>
-          <div class="step-subtitle lavender">Resurface what your pipeline forgot</div>
-        </div>
-      </div>
-      <div class="step-body">Once a week, run a Ghost Hunt. Backstop scans your inbox for conversations that went cold weeks ago — the ones you forgot about, not the ones you're actively tracking. Drop them into a sequence with one click. <strong style="color:var(--lavender)">Dead deals come back to life.</strong></div>
-    </div>
-
   </div>
 
-  <!-- COMPARISON -->
-  <div class="section-label">Why not just use what you already have?</div>
+  <div class="section-label">The Competitive Edge</div>
   <div class="table-wrap">
     <table>
       <thead>
         <tr>
           <th>Feature</th>
           <th>Backstop</th>
-          <th>Outreach / SalesLoft</th>
-          <th>Mixmax / Yesware</th>
-          <th>Boomerang</th>
+          <th>Outreach</th>
+          <th>Mixmax</th>
         </tr>
       </thead>
       <tbody>
         <tr>
           <td>Single-click follow-up</td>
           <td><span class="check">✓</span></td>
-          <td><span class="cross">✗ Requires CSV upload</span></td>
-          <td><span class="cross">✗</span></td>
+          <td><span class="cross">✗ CSV upload</span></td>
           <td><span class="cross">✗</span></td>
         </tr>
         <tr>
@@ -745,76 +490,23 @@
           <td><span class="check">✓</span></td>
           <td><span class="cross">✗ All-or-nothing</span></td>
           <td><span class="cross">✗</span></td>
-          <td><span class="cross">✗</span></td>
-        </tr>
-        <tr>
-          <td>Per-step AI refinement</td>
-          <td><span class="check">✓</span></td>
-          <td><span class="partial">~ Enterprise only</span></td>
-          <td><span class="partial">~ Basic</span></td>
-          <td><span class="cross">✗</span></td>
         </tr>
         <tr>
           <td>Ghost Hunt (deep scan)</td>
           <td><span class="check">✓ Pro</span></td>
           <td><span class="cross">✗</span></td>
           <td><span class="cross">✗</span></td>
-          <td><span class="cross">✗</span></td>
-        </tr>
-        <tr>
-          <td>Zero setup, lives in Gmail</td>
-          <td><span class="check">✓</span></td>
-          <td><span class="cross">✗ External app + hours of config</span></td>
-          <td><span class="partial">~ Heavy</span></td>
-          <td><span class="check">✓</span></td>
         </tr>
       </tbody>
     </table>
   </div>
 
-  <!-- FEATURES GRID -->
-  <div class="section-label">Everything you get</div>
-  <div class="features">
-    <div class="feat-card">
-      <div class="feat-icon green">🪢</div>
-      <div class="feat-title">Babysit Mode</div>
-      <div class="feat-desc">One-click monitoring on any thread you care about. Personal or professional.</div>
-    </div>
-    <div class="feat-card">
-      <div class="feat-icon green">⚡</div>
-      <div class="feat-title">Adaptive Pacing</div>
-      <div class="feat-desc">Aggressive, Standard, or Relaxed cadence per relationship.</div>
-    </div>
-    <div class="feat-card">
-      <div class="feat-icon green">✅</div>
-      <div class="feat-title">Approval Queue</div>
-      <div class="feat-desc">Approve All, Approve Some, or Autopilot. Change the dial anytime.</div>
-    </div>
-    <div class="feat-card">
-      <div class="feat-icon green">🕐</div>
-      <div class="feat-title">Exact Send Previews</div>
-      <div class="feat-desc">Date, time, and timezone for every planned nudge. No surprises.</div>
-    </div>
-    <div class="feat-card">
-      <div class="feat-icon purple">✨</div>
-      <div class="feat-title">AI Refine <span class="pro-badge">Pro</span></div>
-      <div class="feat-desc">Polish each step individually with Gemini or Mistral. Sounds like you, not a bot.</div>
-    </div>
-    <div class="feat-card">
-      <div class="feat-icon purple">👻</div>
-      <div class="feat-title">Ghost Hunt <span class="pro-badge">Pro</span></div>
-      <div class="feat-desc">Deep inbox scan for threads that went cold. Resurface in one click.</div>
-    </div>
-  </div>
-
-  <!-- CTA -->
   <div class="cta-footer">
     <h2>Get Backstop.</h2>
-    <p>Free to install. Pro unlocks Ghost Hunt and AI refinement. For CSMs, founders, AEs, recruiters — and anyone managing relationships that actually matter.</p>
+    <p>Free to install. Pro unlocks Ghost Hunt and AI refinement. For CSMs, founders, AEs, and anyone managing relationships that actually matter[cite: 73, 74].</p>
     <div class="cta-row">
       <a href="BackstopHowTo.html" class="btn-primary">⬇ Add to Chrome — Free</a>
     </div>
-    <div class="fine">Works on any Gmail thread · No CRM required · Your data stays in your inbox</div>
   </div>
 
 </div>
