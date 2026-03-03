@@ -24,6 +24,26 @@
             margin: 0 auto;
         }
 
+        /* --- Back Button Styles --- */
+        .back-nav {
+            margin-bottom: 20px;
+        }
+
+        .btn-back {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: #94a3b8;
+            text-decoration: none;
+            font-size: 0.9em;
+            font-weight: 600;
+            transition: color 0.2s;
+        }
+
+        .btn-back:hover {
+            color: #10b981;
+        }
+
         header {
             text-align: center;
             margin-bottom: 50px;
@@ -178,25 +198,31 @@
 </head>
 <body>
     <div class="container">
+        <div class="back-nav">
+            <a href="index.html" class="btn-back">
+                ← Back to Home
+            </a>
+        </div>
+
         <header>
             <h1>🚀 Backstop Beta</h1>
             <p class="subtitle">Installation Guide for Testers</p>
         </header>
 
         <div class="step">
-    <div class="step-header">
-        <div class="step-number">1</div>
-        <div class="step-title">Download & Unzip</div>
-    </div>
-    <div class="step-content">
-        <p style="margin-bottom: 16px;">Get the beta bundle here:</p>
-        <a href="https://drive.google.com/uc?export=download&id=1oQ4vBInJKP8tFXrI7DcS09gy2QKAi7c6" 
-           style="display: inline-block; background: #10b981; color: #000; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: bold; font-size: 0.9em;">
-           ⬇ Download Backstop_Beta.zip
-        </a>
-        <p style="margin-top: 16px;">Once downloaded, extract the ZIP to your <strong>Desktop</strong>.</p>
-    </div>
-</div>
+            <div class="step-header">
+                <div class="step-number">1</div>
+                <div class="step-title">Download & Unzip</div>
+            </div>
+            <div class="step-content">
+                <p style="margin-bottom: 16px;">Get the beta bundle here:</p>
+                <a href="https://drive.google.com/uc?export=download&id=1oQ4vBInJKP8tFXrI7DcS09gy2QKAi7c6" 
+                   style="display: inline-block; background: #10b981; color: #000; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: bold; font-size: 0.9em;">
+                    ⬇ Download Backstop_Beta.zip
+                </a>
+                <p style="margin-top: 16px;">Once downloaded, extract the ZIP to your <strong>Desktop</strong>.</p>
+            </div>
+        </div>
 
         <div class="step">
             <div class="step-header">
