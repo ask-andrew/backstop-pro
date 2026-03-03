@@ -1,206 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Backstop Beta - Installation Guide</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-            color: #f1f5f9;
-            padding: 40px 20px;
-            line-height: 1.6;
-        }
-
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        /* --- Back Button Styles --- */
-        .back-nav {
-            margin-bottom: 20px;
-        }
-
-        .btn-back {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            color: #94a3b8;
-            text-decoration: none;
-            font-size: 0.9em;
-            font-weight: 600;
-            transition: color 0.2s;
-        }
-
-        .btn-back:hover {
-            color: #10b981;
-        }
-
-        header {
-            text-align: center;
-            margin-bottom: 50px;
-        }
-
-        h1 {
-            font-size: 2.5em;
-            margin-bottom: 10px;
-            background: linear-gradient(135deg, #10b981, #059669);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .subtitle {
-            color: #94a3b8;
-            font-size: 1.1em;
-        }
-
-        .step {
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(16, 185, 129, 0.2);
-            border-radius: 16px;
-            padding: 30px;
-            margin-bottom: 24px;
-            transition: all 0.3s ease;
-        }
-
-        .step:hover {
-            border-color: rgba(16, 185, 129, 0.4);
-            transform: translateY(-2px);
-            box-shadow: 0 8px 24px rgba(16, 185, 129, 0.1);
-        }
-
-        .step-header {
-            display: flex;
-            align-items: center;
-            gap: 16px;
-            margin-bottom: 16px;
-        }
-
-        .step-number {
-            width: 48px;
-            height: 48px;
-            background: linear-gradient(135deg, #10b981, #059669);
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5em;
-            font-weight: bold;
-            flex-shrink: 0;
-        }
-
-        .step-title {
-            font-size: 1.4em;
-            font-weight: 600;
-            color: #10b981;
-        }
-
-        .step-content {
-            padding-left: 64px;
-            color: #cbd5e1;
-        }
-
-        .code {
-            background: rgba(0, 0, 0, 0.3);
-            padding: 4px 8px;
-            border-radius: 4px;
-            font-family: 'Courier New', monospace;
-            color: #10b981;
-            font-size: 0.95em;
-        }
-
-        .warning-box {
-            background: rgba(239, 68, 68, 0.1);
-            border: 2px solid rgba(239, 68, 68, 0.3);
-            border-radius: 12px;
-            padding: 24px;
-            margin: 30px 0;
-        }
-
-        .warning-title {
-            color: #fca5a5;
-            font-size: 1.3em;
-            font-weight: 600;
-            margin-bottom: 12px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .warning-icon {
-            font-size: 1.5em;
-        }
-
-        .feedback-box {
-            background: rgba(59, 130, 246, 0.1);
-            border: 2px solid rgba(59, 130, 246, 0.3);
-            border-radius: 12px;
-            padding: 24px;
-            margin-top: 30px;
-        }
-
-        .feedback-title {
-            color: #93c5fd;
-            font-size: 1.3em;
-            font-weight: 600;
-            margin-bottom: 16px;
-        }
-
-        .feedback-list {
-            list-style: none;
-            padding-left: 0;
-        }
-
-        .feedback-list li {
-            padding: 8px 0;
-            padding-left: 28px;
-            position: relative;
-        }
-
-        .feedback-list li::before {
-            content: "✓";
-            position: absolute;
-            left: 0;
-            color: #10b981;
-            font-weight: bold;
-            font-size: 1.2em;
-        }
-
-        .highlight {
-            color: #10b981;
-            font-weight: 600;
-        }
-
-        @media (max-width: 600px) {
-            h1 {
-                font-size: 2em;
-            }
-            
-            .step {
-                padding: 20px;
-            }
-            
-            .step-content {
-                padding-left: 0;
-                margin-top: 12px;
-            }
-        }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <div class="back-nav">
-            <a href="index.html" class="btn-back">
-                ← Back to Home
+<div class="container">
+        <div style="text-align: center; margin-bottom: 30px;">
+            <a href="index.html" style="
+                display: inline-flex;
+                align-items: center;
+                gap: 8px;
+                padding: 10px 20px;
+                border: 1px solid rgba(16, 185, 129, 0.4);
+                border-radius: 30px;
+                color: #10b981;
+                text-decoration: none;
+                font-size: 0.9em;
+                font-weight: 600;
+                transition: all 0.3s ease;
+                background: rgba(16, 185, 129, 0.05);
+            " onmouseover="this.style.background='rgba(16, 185, 129, 0.15)'" 
+               onmouseout="this.style.background='rgba(16, 185, 129, 0.05)'">
+                ← Return to Backstop Home
             </a>
         </div>
 
@@ -217,78 +32,9 @@
             <div class="step-content">
                 <p style="margin-bottom: 16px;">Get the beta bundle here:</p>
                 <a href="https://drive.google.com/uc?export=download&id=1oQ4vBInJKP8tFXrI7DcS09gy2QKAi7c6" 
-                   style="display: inline-block; background: #10b981; color: #000; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: bold; font-size: 0.9em;">
+                   class="download-btn">
                     ⬇ Download Backstop_Beta.zip
                 </a>
                 <p style="margin-top: 16px;">Once downloaded, extract the ZIP to your <strong>Desktop</strong>.</p>
             </div>
         </div>
-
-        <div class="step">
-            <div class="step-header">
-                <div class="step-number">2</div>
-                <div class="step-title">Open Extensions</div>
-            </div>
-            <div class="step-content">
-                In Chrome, navigate to <span class="code">chrome://extensions</span>
-            </div>
-        </div>
-
-        <div class="step">
-            <div class="step-header">
-                <div class="step-number">3</div>
-                <div class="step-title">Enable Developer Mode</div>
-            </div>
-            <div class="step-content">
-                Toggle the <span class="highlight">Developer mode</span> switch in the top-right corner to <span class="highlight">ON</span>.
-            </div>
-        </div>
-
-        <div class="step">
-            <div class="step-header">
-                <div class="step-number">4</div>
-                <div class="step-title">Load the Extension</div>
-            </div>
-            <div class="step-content">
-                Click <span class="highlight">Load unpacked</span> and select the extracted <span class="code">dist</span> folder.
-            </div>
-        </div>
-
-        <div class="step">
-            <div class="step-header">
-                <div class="step-number">5</div>
-                <div class="step-title">Open Gmail</div>
-            </div>
-            <div class="step-content">
-                Refresh your Gmail tab. You should see the <span class="highlight">emerald-green Backstop sidebar</span> on the right! 🎉
-            </div>
-        </div>
-
-        <div class="warning-box">
-            <div class="warning-title">
-                <span class="warning-icon">⚠️</span>
-                Expected Security Warning
-            </div>
-            <div style="color: #e2e8f0;">
-                <p style="margin-bottom: 12px;">When you first click <strong>"Sign in with Google"</strong>, you'll see: <em>"Google hasn't verified this app."</em></p>
-                <p style="margin-bottom: 8px;"><strong>This is normal!</strong> To proceed:</p>
-                <ol style="margin-left: 20px; margin-top: 8px;">
-                    <li>Click <span class="highlight">"Advanced"</span></li>
-                    <li>Then click <span class="highlight">"Go to Backstop (unsafe)"</span></li>
-                </ol>
-                <p style="margin-top: 12px; font-size: 0.95em; color: #cbd5e1;">This happens because the app is in development mode. It's safe to proceed!</p>
-            </div>
-        </div>
-
-        <div class="feedback-box">
-            <div class="feedback-title">📋 What to Test</div>
-            <ul class="feedback-list">
-                <li><strong>First Look:</strong> Does the sidebar appear immediately, or do you need to refresh?</li>
-                <li><strong>I Ain't Afraid of No Ghosts:</strong> Does the "Ghost Hunt" tab accurately show your unanswered emails? Did you tinker with the automated messages?</li>
-                <li><strong>Useful Check:</strong> Is this helpful? Would this save you time? Do you think this would help others?</li>
-                <li><strong>2.0:</strong> What would make this better?</li>
-            </ul>
-        </div>
-    </div>
-</body>
-</html>
