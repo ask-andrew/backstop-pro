@@ -39,15 +39,14 @@
   }
 
   .page {
-    max-width: 900px;
+    max-width: 940px;
     margin: 0 auto;
     padding: 0 24px 80px;
-    font-size: 18px;
   }
 
   /* ── HERO ─────────────────────────────────────────── */
   .hero {
-    padding: 72px 0 56px;
+    padding: 40px 0 56px;
     text-align: center;
     position: relative;
   }
@@ -61,14 +60,21 @@
     pointer-events: none;
   }
 
-  .logo-icon {
-    width: 64px; height: 64px;
-    background: var(--emerald-dim);
-    border: 2px solid var(--emerald-border);
-    border-radius: 18px;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 32px;
-    margin: 0 auto 32px;
+  .hero-visual {
+    position: relative;
+    max-width: 100%;
+    margin: 0 auto 48px;
+    border-radius: var(--radius);
+    padding: 1px;
+    background: linear-gradient(135deg, rgba(16,185,129,0.5) 0%, transparent 100%);
+    box-shadow: 0 40px 100px -12px rgba(0,0,0,0.8), 0 20px 40px -20px rgba(16,185,129,0.4);
+    overflow: hidden;
+  }
+
+  .hero-image {
+    width: 100%;
+    display: block;
+    border-radius: 19px;
   }
 
   .hero h1 {
@@ -86,52 +92,36 @@
   }
 
   .hero-sub {
-    font-size: 18px;
+    font-size: 20px;
     color: var(--text2);
-    max-width: 600px;
+    max-width: 640px;
     margin: 0 auto 40px;
-    line-height: 1.7;
-  }
-
-  .hero-visual {
-    position: relative;
-    max-width: 940px;
-    margin: 60px auto 0;
-    border-radius: var(--radius);
-    padding: 1px;
-    background: linear-gradient(135deg, rgba(16,185,129,0.5) 0%, transparent 100%);
-    box-shadow: 0 40px 100px -12px rgba(0,0,0,0.8), 0 20px 40px -20px rgba(16,185,129,0.4);
-    overflow: hidden;
-  }
-
-  .hero-image {
-    width: 100%;
-    display: block;
-    border-radius: 19px;
+    line-height: 1.6;
   }
 
   .cta-row {
     display: flex;
-    gap: 12px;
+    gap: 16px;
     justify-content: center;
     flex-wrap: wrap;
+    margin-bottom: 40px;
   }
 
   .btn-primary {
     background: var(--emerald);
     color: #000;
-    font-size: 13px;
+    font-size: 14px;
     font-weight: 800;
-    letter-spacing: 0.08em;
+    letter-spacing: 0.05em;
     text-transform: uppercase;
-    padding: 16px 32px;
+    padding: 18px 36px;
     border-radius: 100px;
     border: none;
     cursor: pointer;
     text-decoration: none;
     display: inline-flex;
     align-items: center;
-    gap: 8px;
+    gap: 10px;
     transition: 0.2s;
   }
   .btn-primary:hover { background: var(--emerald2); transform: translateY(-2px); }
@@ -139,19 +129,21 @@
   .btn-ghost {
     background: transparent;
     color: var(--text2);
-    font-size: 13px;
+    font-size: 14px;
     font-weight: 700;
-    letter-spacing: 0.08em;
+    letter-spacing: 0.05em;
     text-transform: uppercase;
-    padding: 16px 32px;
+    padding: 18px 36px;
     border-radius: 100px;
     border: 1px solid var(--slate2);
     cursor: pointer;
     text-decoration: none;
     display: inline-flex;
     align-items: center;
-    gap: 8px;
+    gap: 10px;
+    transition: 0.2s;
   }
+  .btn-ghost:hover { border-color: var(--text2); color: var(--text); transform: translateY(-2px); }
 
   /* ── SECTION LABEL ────────────────────────────────── */
   .section-label {
@@ -160,7 +152,7 @@
     letter-spacing: 0.2em;
     text-transform: uppercase;
     color: var(--emerald);
-    margin: 80px 0 16px;
+    margin: 80px 0 24px;
     text-align: center;
   }
 
@@ -169,8 +161,8 @@
     background: var(--navy2);
     border: 1px solid var(--slate2);
     border-radius: var(--radius);
-    padding: 40px 44px;
-    margin-bottom: 24px;
+    padding: 48px;
+    margin-bottom: 32px;
     position: relative;
     overflow: hidden;
   }
@@ -186,72 +178,82 @@
     line-height: 1;
   }
 
-  .story p { font-size: 15px; color: var(--text2); line-height: 1.8; margin-bottom: 14px; }
+  .story p { font-size: 17px; color: var(--text2); line-height: 1.8; margin-bottom: 18px; }
   .story strong { color: var(--text); font-weight: 700; }
-  .story .punchline { font-size: 17px; color: var(--text); font-weight: 700; font-style: italic; border-left: 3px solid var(--emerald); padding-left: 16px; margin-top: 20px; }
+  .story .punchline { font-size: 19px; color: var(--text); font-weight: 700; font-style: italic; border-left: 4px solid var(--emerald); padding-left: 20px; margin-top: 24px; }
 
   /* ── STAT STRIP ───────────────────────────────────── */
-  .stat-strip { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 24px; }
-  .stat-card { background: var(--navy2); border: 1px solid var(--slate2); border-radius: var(--radius); padding: 24px 20px; text-align: center; }
-  .stat-card .num { font-size: 36px; font-weight: 900; color: var(--emerald); letter-spacing: -0.03em; margin-bottom: 8px; }
-  .stat-card .label { font-size: 11px; font-weight: 700; color: var(--text2); line-height: 1.4; }
+  .stat-strip { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 32px; }
+  .stat-card { background: var(--navy2); border: 1px solid var(--slate2); border-radius: var(--radius); padding: 32px 24px; text-align: center; }
+  .stat-card .num { font-size: 42px; font-weight: 900; color: var(--emerald); letter-spacing: -0.03em; margin-bottom: 8px; }
+  .stat-card .label { font-size: 13px; font-weight: 700; color: var(--text2); line-height: 1.4; }
 
   /* ── HOW IT WORKS ─────────────────────────────────── */
-  .steps { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 24px; }
-  .step-card { background: var(--navy2); border: 1px solid var(--slate2); border-radius: var(--radius); padding: 28px; }
+  .steps { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 32px; }
+  .step-card { background: var(--navy2); border: 1px solid var(--slate2); border-radius: var(--radius); padding: 32px; transition: 0.2s; }
+  .step-card:hover { border-color: var(--emerald-border); }
   .step-card.pro { border-color: var(--lavender-border); background: linear-gradient(135deg, var(--navy2) 0%, rgba(167,139,250,0.04) 100%); }
-  .step-top { display: flex; align-items: flex-start; gap: 14px; margin-bottom: 14px; }
-  .step-num { width: 32px; height: 32px; background: var(--emerald-dim); border: 1px solid var(--emerald-border); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 900; color: var(--emerald); flex-shrink: 0; }
-  .step-title { font-size: 14px; font-weight: 800; color: var(--text); line-height: 1.3; }
-  .step-subtitle { font-size: 9px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; margin-top: 3px; }
+  .step-top { display: flex; align-items: flex-start; gap: 16px; margin-bottom: 16px; }
+  .step-num { width: 36px; height: 36px; background: var(--emerald-dim); border: 1px solid var(--emerald-border); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 900; color: var(--emerald); flex-shrink: 0; }
+  .step-title { font-size: 16px; font-weight: 800; color: var(--text); line-height: 1.3; }
+  .step-subtitle { font-size: 10px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; margin-top: 4px; }
   .step-subtitle.emerald { color: var(--emerald); }
   .step-subtitle.lavender { color: var(--lavender); }
   .step-body { font-size: 15px; color: var(--text2); line-height: 1.7; }
 
   /* ── CONTROL MODES ── */
-  .control-modes { display: flex; flex-direction: column; gap: 6px; margin-top: 12px; }
-  .mode-row { display: flex; align-items: center; gap: 10px; background: var(--slate); border-radius: 10px; padding: 8px 12px; }
-  .mode-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+  .control-modes { display: flex; flex-direction: column; gap: 8px; margin-top: 16px; }
+  .mode-row { display: flex; align-items: center; gap: 12px; background: var(--slate); border-radius: 12px; padding: 10px 16px; }
+  .mode-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
   .mode-dot.green { background: var(--emerald); }
   .mode-dot.yellow { background: #f59e0b; }
   .mode-dot.blue { background: #60a5fa; }
-  .mode-label { font-size: 11px; font-weight: 800; color: var(--text); min-width: 90px; }
+  .mode-label { font-size: 12px; font-weight: 800; color: var(--text); min-width: 100px; }
   .mode-desc { font-size: 12px; color: var(--text3); }
 
+  .pause-strip { display: flex; gap: 10px; margin-top: 16px; flex-wrap: wrap; }
+  .pause-pill { display: inline-flex; align-items: center; gap: 8px; background: var(--slate2); border-radius: 100px; padding: 6px 14px; font-size: 11px; font-weight: 700; color: var(--text2); }
+  .pause-pill .dot { width: 6px; height: 6px; background: var(--rose); border-radius: 50%; }
+
   /* ── COMPARISON TABLE ─────────────────────────────── */
-  .table-wrap { background: var(--navy2); border: 1px solid var(--slate2); border-radius: var(--radius); overflow: hidden; margin-bottom: 24px; }
+  .table-wrap { background: var(--navy2); border: 1px solid var(--slate2); border-radius: var(--radius); overflow: hidden; margin-bottom: 32px; }
   table { width: 100%; border-collapse: collapse; font-size: 15px; }
   thead tr { background: var(--slate); }
-  thead th { padding: 14px 20px; text-align: left; font-size: 9px; font-weight: 800; text-transform: uppercase; color: var(--text2); letter-spacing: 0.25em; }
+  thead th { padding: 18px 24px; text-align: left; font-size: 10px; font-weight: 800; text-transform: uppercase; color: var(--text2); letter-spacing: 0.25em; }
   tbody tr { border-top: 1px solid var(--slate); }
-  tbody td { padding: 14px 20px; color: var(--text2); }
+  tbody td { padding: 18px 24px; color: var(--text2); }
   tbody td:first-child { color: var(--text); font-weight: 700; }
   .check { color: var(--emerald); font-weight: 800; }
+  .cross { color: var(--text3); font-size: 14px; }
+  .partial { color: #f59e0b; font-size: 14px; }
 
   /* ── FEATURES GRID ────────────────────────────────── */
-  .features { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 24px; }
-  .feat-card { background: var(--navy2); border: 1px solid var(--slate2); border-radius: var(--radius); padding: 22px; }
-  .feat-icon { width: 36px; height: 36px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 17px; margin-bottom: 12px; }
+  .features { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 32px; }
+  .feat-card { background: var(--navy2); border: 1px solid var(--slate2); border-radius: var(--radius); padding: 28px; }
+  .feat-icon { width: 44px; height: 44px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 20px; margin-bottom: 16px; }
   .feat-icon.green { background: var(--emerald-dim); border: 1px solid var(--emerald-border); }
   .feat-icon.purple { background: var(--lavender-dim); border: 1px solid var(--lavender-border); }
-  .feat-title { font-size: 13px; font-weight: 800; color: var(--text); margin-bottom: 6px; }
-  .pro-badge { font-size: 8px; font-weight: 800; color: var(--lavender); background: var(--lavender-dim); border: 1px solid var(--lavender-border); padding: 2px 6px; border-radius: 4px; margin-left: 6px; }
-  .feat-desc { font-size: 12px; color: var(--text2); line-height: 1.6; }
+  .feat-title { font-size: 15px; font-weight: 800; color: var(--text); margin-bottom: 8px; }
+  .pro-badge { font-size: 9px; font-weight: 800; color: var(--lavender); background: var(--lavender-dim); border: 1px solid var(--lavender-border); padding: 2px 8px; border-radius: 6px; margin-left: 8px; }
+  .feat-desc { font-size: 13px; color: var(--text2); line-height: 1.6; }
 
-  .pitch-quote { background: linear-gradient(135deg, var(--navy2) 0%, rgba(16,185,129,0.05) 100%); border: 1px solid var(--emerald-border); border-radius: var(--radius); padding: 36px 44px; text-align: center; margin-bottom: 24px; }
-  .pitch-quote p { font-size: 18px; font-weight: 700; color: var(--text); line-height: 1.6; }
+  .pitch-quote { background: linear-gradient(135deg, var(--navy2) 0%, rgba(16,185,129,0.05) 100%); border: 1px solid var(--emerald-border); border-radius: var(--radius); padding: 48px; text-align: center; margin-bottom: 32px; }
+  .pitch-quote p { font-size: 22px; font-weight: 700; color: var(--text); line-height: 1.5; }
   .pitch-quote p em { color: var(--emerald); font-style: normal; }
 
   /* ── CTA FOOTER ───────────────────────────────────── */
-  .cta-footer { background: var(--navy2); border: 1px solid var(--slate2); border-radius: var(--radius); padding: 48px; text-align: center; }
-  .cta-footer h2 { font-size: 28px; font-weight: 900; margin-bottom: 12px; }
-  .cta-footer p { font-size: 14px; color: var(--text2); margin-bottom: 28px; max-width: 420px; margin: 0 auto; }
+  .cta-footer { background: var(--navy2); border: 1px solid var(--slate2); border-radius: var(--radius); padding: 64px 48px; text-align: center; }
+  .cta-footer h2 { font-size: 36px; font-weight: 900; margin-bottom: 16px; letter-spacing: -0.02em; }
+  .cta-footer p { font-size: 16px; color: var(--text2); margin-bottom: 36px; max-width: 480px; margin: 0 auto 36px; }
   
-  .beta-contact { margin-top: 32px; padding-top: 24px; border-top: 1px solid var(--slate2); }
-  .beta-contact h3 { font-size: 14px; color: var(--emerald); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 8px; }
-  .beta-contact p { font-size: 13px; color: var(--text2); }
+  .beta-contact { margin-top: 40px; padding-top: 32px; border-top: 1px solid var(--slate2); }
+  .beta-contact h3 { font-size: 14px; color: var(--emerald); text-transform: uppercase; letter-spacing: 0.15em; margin-bottom: 12px; font-weight: 800; }
+  .beta-contact p { font-size: 14px; color: var(--text2); line-height: 1.6; }
 
-  @media (max-width: 768px) { .steps, .features, .stat-strip { grid-template-columns: 1fr; } }
+  @media (max-width: 860px) { 
+    .steps, .features, .stat-strip { grid-template-columns: 1fr; } 
+    .hero h1 { font-size: 40px; }
+  }
 </style>
 </head>
 <body>
@@ -259,8 +261,14 @@
 
   <div class="hero">
     <div class="hero-glow"></div>
+    
+    <div class="hero-visual">
+      <img src="hero-bg.png" alt="Backstop Dashboard" class="hero-image">
+    </div>
+
     <h1>Never miss an important<br><em>email reply again</em></h1>
     <p class="hero-sub">The Gmail extension that watches your important threads and drafts the perfect follow-up—right when you need it.</p>
+    
     <div class="cta-row">
       <a href="mailto:askandrewcoaching@gmail.com?subject=Backstop Beta Access Request&body=Hi Andrew,%0D%0A%0D%0AI'd like to request beta access to Backstop. Here's my Gmail address for whitelisting:%0D%0A%0D%0A[Your Gmail address]%0D%0A%0D%0AThanks!" class="btn-primary">📧 Request Beta Access</a>
       <a href="BackstopHowTo.html" class="btn-ghost">Installation Guide</a>
@@ -276,9 +284,9 @@
   </div>
 
   <div class="stat-strip">
-    <div class="stat-card"><div class="num">8.4%</div><div class="label">Reply rate from the first follow-up</div></div>
+    <div class="stat-card"><div class="num">8.4%</div><div class="label">Reply rate from the first follow-up — the highest in any sequence</div></div>
     <div class="stat-card"><div class="num">3×</div><div class="label">Increase in spam complaints after 4+ nudges</div></div>
-    <div class="stat-card"><div class="num">1</div><div class="label">Average follow-ups sent before giving up</div></div>
+    <div class="stat-card"><div class="num">1</div><div class="label">Average follow-ups sent before most give up</div></div>
   </div>
 
   <div class="pitch-quote">
@@ -309,9 +317,8 @@
                 <div class="pause-pill"><span class="dot"></span> Multi-person threads</div>
             </div>
         </div>
-      </div>
       <div class="step-card pro">
-        <div class="step-top"><div class="step-num" style="background:var(--lavender-dim); color:var(--lavender);">04</div><div><div class="step-title">Ghost Hunt <span class="pro-badge">PRO</span></div><div class="step-subtitle lavender">Resurface cold threads</div></div></div>
+        <div class="step-top"><div class="step-num" style="background:var(--lavender-dim); color:var(--lavender); border-color:var(--lavender-border);">04</div><div><div class="step-title">Ghost Hunt <span class="pro-badge">PRO</span></div><div class="step-subtitle lavender">Resurface cold threads</div></div></div>
         <div class="step-body">Backstop scans your inbox for conversations that went cold weeks ago. Drop them into a sequence with one click. <strong>Dead deals come back to life.</strong></div>
       </div>
   </div>
@@ -319,11 +326,51 @@
   <div class="section-label">Why not use what you already have?</div>
   <div class="table-wrap">
     <table>
-      <thead><tr><th>Feature</th><th>Backstop</th><th>Outreach</th><th>Mixmax</th></tr></thead>
+      <thead>
+        <tr>
+          <th>Feature</th>
+          <th>Backstop</th>
+          <th>Outreach / SalesLoft</th>
+          <th>Mixmax / Yesware</th>
+          <th>Boomerang</th>
+        </tr>
+      </thead>
       <tbody>
-        <tr><td>Single-click follow-up</td><td><span class="check">✓</span></td><td>✗</td><td>✗</td></tr>
-        <tr><td>Adjustable approval control</td><td><span class="check">✓</span></td><td>✗</td><td>✗</td></tr>
-        <tr><td>Ghost Hunt (deep scan)</td><td><span class="check">✓ Pro</span></td><td>✗</td><td>✗</td></tr>
+        <tr>
+          <td>Single-click follow-up</td>
+          <td><span class="check">✓</span></td>
+          <td><span class="cross">✗ Requires CSV upload</span></td>
+          <td><span class="cross">✗</span></td>
+          <td><span class="cross">✗</span></td>
+        </tr>
+        <tr>
+          <td>Adjustable approval control</td>
+          <td><span class="check">✓</span></td>
+          <td><span class="cross">✗ All-or-nothing</span></td>
+          <td><span class="cross">✗</span></td>
+          <td><span class="cross">✗</span></td>
+        </tr>
+        <tr>
+          <td>Per-step AI refinement</td>
+          <td><span class="check">✓</span></td>
+          <td><span class="partial">~ Enterprise only</span></td>
+          <td><span class="partial">~ Basic</span></td>
+          <td><span class="cross">✗</span></td>
+        </tr>
+        <tr>
+          <td>Ghost Hunt (deep scan)</td>
+          <td><span class="check">✓ Pro</span></td>
+          <td><span class="cross">✗</span></td>
+          <td><span class="cross">✗</span></td>
+          <td><span class="cross">✗</span></td>
+        </tr>
+        <tr>
+          <td>Zero setup, lives in Gmail</td>
+          <td><span class="check">✓</span></td>
+          <td><span class="cross">✗ Heavy external config</span></td>
+          <td><span class="partial">~ Heavy</span></td>
+          <td><span class="check">✓</span></td>
+        </tr>
       </tbody>
     </table>
   </div>
@@ -350,7 +397,7 @@
         <p>To use Backstop, I must manually whitelist your email in the Google Console. Please <strong>send me your testing email</strong> after installing so I can grant you access.</p>
     </div>
     
-    <div style="font-size: 11px; color: var(--text3); margin-top: 16px;">Works on any Gmail thread · No CRM required</div>
+    <div style="font-size: 11px; color: var(--text3); margin-top: 16px;">Works on any Gmail thread · No CRM required · Your data stays in your inbox</div>
   </div>
 
 </div>
