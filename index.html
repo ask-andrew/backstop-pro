@@ -26,7 +26,7 @@
     --text:    #f0f6fc;
     --text2:   #8b949e;
     --text3:   #6e7681;
-    --radius:  24px;
+    --radius:  20px;
   }
 
   body {
@@ -43,27 +43,20 @@
     padding: 0 24px 80px;
   }
 
-  /* ── REVISED HERO SECTION ─────────────────────────── */
+  /* ── HERO ─────────────────────────────────────────── */
   .hero {
-    padding: 60px 0 60px;
+    padding: 72px 0 56px;
     text-align: center;
     position: relative;
   }
 
   .hero-glow {
     position: absolute;
-    top: -100px; left: 50%;
+    top: 0; left: 50%;
     transform: translateX(-50%);
-    width: 800px; height: 500px;
-    background: radial-gradient(circle at center, rgba(16,185,129,0.15) 0%, transparent 70%);
+    width: 600px; height: 300px;
+    background: radial-gradient(ellipse at center top, rgba(16,185,129,0.15) 0%, transparent 70%);
     pointer-events: none;
-  }
-
-  .logo-row {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 32px;
   }
 
   .logo-icon {
@@ -73,7 +66,7 @@
     border-radius: 18px;
     display: flex; align-items: center; justify-content: center;
     font-size: 32px;
-    box-shadow: 0 0 20px rgba(16,185,129,0.1);
+    margin: 0 auto 32px;
   }
 
   .hero h1 {
@@ -112,18 +105,24 @@
   .hero-image {
     width: 100%;
     display: block;
-    border-radius: 23px;
-    filter: brightness(1.05) contrast(1.05);
+    border-radius: 19px;
+  }
+
+  .cta-row {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    flex-wrap: wrap;
   }
 
   .btn-primary {
     background: var(--emerald);
     color: #000;
-    font-size: 14px;
+    font-size: 13px;
     font-weight: 800;
     letter-spacing: 0.08em;
     text-transform: uppercase;
-    padding: 18px 40px;
+    padding: 16px 32px;
     border-radius: 100px;
     border: none;
     cursor: pointer;
@@ -131,13 +130,25 @@
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-    box-shadow: 0 10px 30px rgba(16,185,129,0.3);
+    transition: 0.2s;
   }
+  .btn-primary:hover { background: var(--emerald2); transform: translateY(-2px); }
 
-  .btn-primary:hover { 
-    background: var(--emerald2);
-    transform: translateY(-3px);
+  .btn-ghost {
+    background: transparent;
+    color: var(--text2);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 16px 32px;
+    border-radius: 100px;
+    border: 1px solid var(--slate2);
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
   }
 
   /* ── SECTION LABEL ────────────────────────────────── */
@@ -181,16 +192,29 @@
   .stat-strip { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 24px; }
   .stat-card { background: var(--navy2); border: 1px solid var(--slate2); border-radius: var(--radius); padding: 24px 20px; text-align: center; }
   .stat-card .num { font-size: 36px; font-weight: 900; color: var(--emerald); letter-spacing: -0.03em; margin-bottom: 8px; }
-  .stat-card .label { font-size: 11px; font-weight: 700; color: var(--text2); letter-spacing: 0.05em; }
+  .stat-card .label { font-size: 11px; font-weight: 700; color: var(--text2); line-height: 1.4; }
 
   /* ── HOW IT WORKS ─────────────────────────────────── */
   .steps { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 24px; }
   .step-card { background: var(--navy2); border: 1px solid var(--slate2); border-radius: var(--radius); padding: 28px; }
   .step-card.pro { border-color: var(--lavender-border); background: linear-gradient(135deg, var(--navy2) 0%, rgba(167,139,250,0.04) 100%); }
   .step-top { display: flex; align-items: flex-start; gap: 14px; margin-bottom: 14px; }
-  .step-num { width: 32px; height: 32px; background: var(--emerald-dim); border: 1px solid var(--emerald-border); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 900; color: var(--emerald); }
-  .step-title { font-size: 14px; font-weight: 800; color: var(--text); }
+  .step-num { width: 32px; height: 32px; background: var(--emerald-dim); border: 1px solid var(--emerald-border); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 900; color: var(--emerald); flex-shrink: 0; }
+  .step-title { font-size: 14px; font-weight: 800; color: var(--text); line-height: 1.3; }
+  .step-subtitle { font-size: 9px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; margin-top: 3px; }
+  .step-subtitle.emerald { color: var(--emerald); }
+  .step-subtitle.lavender { color: var(--lavender); }
   .step-body { font-size: 13px; color: var(--text2); line-height: 1.7; }
+
+  /* ── CONTROL MODES ── */
+  .control-modes { display: flex; flex-direction: column; gap: 6px; margin-top: 12px; }
+  .mode-row { display: flex; align-items: center; gap: 10px; background: var(--slate); border-radius: 10px; padding: 8px 12px; }
+  .mode-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+  .mode-dot.green { background: var(--emerald); }
+  .mode-dot.yellow { background: #f59e0b; }
+  .mode-dot.blue { background: #60a5fa; }
+  .mode-label { font-size: 11px; font-weight: 800; color: var(--text); min-width: 90px; }
+  .mode-desc { font-size: 10px; color: var(--text3); }
 
   /* ── COMPARISON TABLE ─────────────────────────────── */
   .table-wrap { background: var(--navy2); border: 1px solid var(--slate2); border-radius: var(--radius); overflow: hidden; margin-bottom: 24px; }
@@ -205,15 +229,25 @@
   /* ── FEATURES GRID ────────────────────────────────── */
   .features { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 24px; }
   .feat-card { background: var(--navy2); border: 1px solid var(--slate2); border-radius: var(--radius); padding: 22px; }
-  .feat-icon { width: 36px; height: 36px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 17px; margin-bottom: 12px; background: var(--emerald-dim); border: 1px solid var(--emerald-border); }
+  .feat-icon { width: 36px; height: 36px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 17px; margin-bottom: 12px; }
+  .feat-icon.green { background: var(--emerald-dim); border: 1px solid var(--emerald-border); }
+  .feat-icon.purple { background: var(--lavender-dim); border: 1px solid var(--lavender-border); }
   .feat-title { font-size: 13px; font-weight: 800; color: var(--text); margin-bottom: 6px; }
-  .feat-desc { font-size: 12px; color: var(--text2); line-height: 1.6; }
   .pro-badge { font-size: 8px; font-weight: 800; color: var(--lavender); background: var(--lavender-dim); border: 1px solid var(--lavender-border); padding: 2px 6px; border-radius: 4px; margin-left: 6px; }
+  .feat-desc { font-size: 12px; color: var(--text2); line-height: 1.6; }
+
+  .pitch-quote { background: linear-gradient(135deg, var(--navy2) 0%, rgba(16,185,129,0.05) 100%); border: 1px solid var(--emerald-border); border-radius: var(--radius); padding: 36px 44px; text-align: center; margin-bottom: 24px; }
+  .pitch-quote p { font-size: 18px; font-weight: 700; color: var(--text); line-height: 1.6; }
+  .pitch-quote p em { color: var(--emerald); font-style: normal; }
 
   /* ── CTA FOOTER ───────────────────────────────────── */
-  .cta-footer { background: var(--navy2); border: 1px solid var(--slate2); border-radius: var(--radius); padding: 60px 48px; text-align: center; margin-top: 40px; }
-  .cta-footer h2 { font-size: 32px; font-weight: 900; margin-bottom: 12px; }
-  .cta-footer p { font-size: 15px; color: var(--text2); margin-bottom: 32px; max-width: 480px; margin: 0 auto 32px; }
+  .cta-footer { background: var(--navy2); border: 1px solid var(--slate2); border-radius: var(--radius); padding: 48px; text-align: center; }
+  .cta-footer h2 { font-size: 28px; font-weight: 900; margin-bottom: 12px; }
+  .cta-footer p { font-size: 14px; color: var(--text2); margin-bottom: 28px; max-width: 420px; margin: 0 auto; }
+  
+  .beta-contact { margin-top: 32px; padding-top: 24px; border-top: 1px solid var(--slate2); }
+  .beta-contact h3 { font-size: 14px; color: var(--emerald); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 8px; }
+  .beta-contact p { font-size: 13px; color: var(--text2); }
 
   @media (max-width: 768px) { .steps, .features, .stat-strip { grid-template-columns: 1fr; } }
 </style>
@@ -223,14 +257,14 @@
 
   <div class="hero">
     <div class="hero-glow"></div>
-    <div class="logo-row">
-      <div class="logo-icon">🪢</div>
-    </div>
-    <h1><em>Communication insurance</em><br>that babysits your emails.</h1>
-    <p class="hero-sub">Gmail wasn't built to track the silence after you hit send. Backstop watches the threads that matter and prepares your next move — before the moment passes.</p>
+    <div class="logo-icon">🪢</div>
+    <h1>Communication insurance that<br><em>babysits your emails</em><br>until you get a reply.</h1>
+    <p class="hero-sub">You sent the email. It was good. They just didn't reply. Backstop watches the threads that matter and prepares your next move — before the moment passes.</p>
     <div class="cta-row">
       <a href="BackstopHowTo.html" class="btn-primary">⬇ Add to Chrome — Free</a>
+      <a href="#how" class="btn-ghost">See How It Works</a>
     </div>
+    
     <div class="hero-visual">
         <img src="hero-bg.png" alt="Backstop Dashboard" class="hero-image">
     </div>
@@ -245,74 +279,73 @@
   </div>
 
   <div class="stat-strip">
-    <div class="stat-card">
-      <div class="num">8.4%</div>
-      <div class="label">Reply rate from the first follow-up</div>
-    </div>
-    <div class="stat-card">
-      <div class="num">3×</div>
-      <div class="label">Increase in spam complaints after a 4th nudge</div>
-    </div>
-    <div class="stat-card">
-      <div class="num">1</div>
-      <div class="label">The follow-ups most pros actually send</div>
-    </div>
+    <div class="stat-card"><div class="num">8.4%</div><div class="label">Reply rate from the first follow-up</div></div>
+    <div class="stat-card"><div class="num">3×</div><div class="label">Increase in spam complaints after 4+ nudges</div></div>
+    <div class="stat-card"><div class="num">1</div><div class="label">Average follow-ups sent before giving up</div></div>
   </div>
 
-  <div class="section-label">How it works</div>
+  <div class="pitch-quote">
+    <p>The problem isn't that you need to follow up <em>more</em>.<br>It's that the one follow-up that matters never gets sent.<br>Backstop makes sure it happens — <em>on your terms.</em></p>
+  </div>
+
+  <div id="how" class="section-label">How it works</div>
   <div class="steps">
     <div class="step-card">
-      <div class="step-top">
-        <div class="step-num">01</div>
-        <div class="step-title">Babysit Mode</div>
-      </div>
+      <div class="step-top"><div class="step-num">01</div><div><div class="step-title">Babysit Mode</div><div class="step-subtitle emerald">One-click activation</div></div></div>
       <div class="step-body">Send an important email. Click <strong>Babysit</strong>. Choose your pace. Backstop maps out a 3-stage sequence and monitors the thread. No to-do items. No calendar reminders.</div>
     </div>
     <div class="step-card">
-      <div class="step-top">
-        <div class="step-num">02</div>
-        <div class="step-title">Sequence Editor</div>
-      </div>
-      <div class="step-body">Read the draft, shuffle variants, or hit <strong>AI Refine</strong> to polish steps. Every planned send shows the exact date, time, and timezone.</div>
+      <div class="step-top"><div class="step-num">02</div><div><div class="step-title">Sequence Editor</div><div class="step-subtitle emerald">Full preview before anything fires</div></div></div>
+      <div class="step-body">Three steps. For each one: read the draft, shuffle template variants, edit freely, or hit <strong>AI Refine</strong> to polish that specific step.</div>
     </div>
+    <div class="step-card">
+        <div class="step-top"><div class="step-num">03</div><div><div class="step-title">Approval Queue</div><div class="step-subtitle emerald">You set the level of control</div></div></div>
+        <div class="step-body">Every nudge lands in your Approvals tab before it moves.
+            <div class="control-modes">
+                <div class="mode-row"><div class="mode-dot green"></div><div class="mode-label">Approve All</div><div class="mode-desc">Full sign-off on every message</div></div>
+                <div class="mode-row"><div class="mode-dot blue"></div><div class="mode-label">Autopilot</div><div class="mode-desc">Surfaces exceptions only</div></div>
+            </div>
+        </div>
+      </div>
+      <div class="step-card pro">
+        <div class="step-top"><div class="step-num" style="background:var(--lavender-dim); color:var(--lavender);">04</div><div><div class="step-title">Ghost Hunt <span class="pro-badge">PRO</span></div><div class="step-subtitle lavender">Resurface cold threads</div></div></div>
+        <div class="step-body">Backstop scans your inbox for conversations that went cold weeks ago. Drop them into a sequence with one click. <strong>Dead deals come back to life.</strong></div>
+      </div>
   </div>
 
-  <div class="section-label">Why Backstop?</div>
+  <div class="section-label">Why not use what you already have?</div>
   <div class="table-wrap">
     <table>
-      <thead>
-        <tr><th>Feature</th><th>Backstop</th><th>SalesLoft</th><th>Mixmax</th></tr>
-      </thead>
+      <thead><tr><th>Feature</th><th>Backstop</th><th>Outreach</th><th>Mixmax</th></tr></thead>
       <tbody>
         <tr><td>Single-click follow-up</td><td><span class="check">✓</span></td><td>✗</td><td>✗</td></tr>
-        <tr><td>Adjustable approval</td><td><span class="check">✓</span></td><td>✗</td><td>✗</td></tr>
-        <tr><td>Ghost Hunt scan</td><td><span class="check">✓ Pro</span></td><td>✗</td><td>✗</td></tr>
+        <tr><td>Adjustable approval control</td><td><span class="check">✓</span></td><td>✗</td><td>✗</td></tr>
+        <tr><td>Ghost Hunt (deep scan)</td><td><span class="check">✓ Pro</span></td><td>✗</td><td>✗</td></tr>
       </tbody>
     </table>
   </div>
 
+  <div class="section-label">Everything you get</div>
   <div class="features">
-    <div class="feat-card">
-      <div class="feat-icon">🪢</div>
-      <div class="feat-title">Adaptive Pacing</div>
-      <div class="feat-desc">Aggressive or Relaxed cadence per relationship.</div>
-    </div>
-    <div class="feat-card">
-      <div class="feat-icon">✨</div>
-      <div class="feat-title">AI Refine <span class="pro-badge">Pro</span></div>
-      <div class="feat-desc">Polish drafts with Gemini or Mistral.</div>
-    </div>
-    <div class="feat-card">
-      <div class="feat-icon">👻</div>
-      <div class="feat-title">Ghost Hunt <span class="pro-badge">Pro</span></div>
-      <div class="feat-desc">Deep inbox scan for threads gone cold.</div>
-    </div>
+    <div class="feat-card"><div class="feat-icon green">🪢</div><div class="feat-title">Babysit Mode</div><div class="feat-desc">One-click monitoring on any thread you care about.</div></div>
+    <div class="feat-card"><div class="feat-icon green">⚡</div><div class="feat-title">Adaptive Pacing</div><div class="feat-desc">Aggressive, Standard, or Relaxed cadence.</div></div>
+    <div class="feat-card"><div class="feat-icon green">✅</div><div class="feat-title">Approval Queue</div><div class="feat-desc">Approve All, Approve Some, or Autopilot.</div></div>
+    <div class="feat-card"><div class="feat-icon green">🕐</div><div class="feat-title">Exact Previews</div><div class="feat-desc">Date, time, and timezone for every nudge.</div></div>
+    <div class="feat-card"><div class="feat-icon purple">✨</div><div class="feat-title">AI Refine <span class="pro-badge">Pro</span></div><div class="feat-desc">Polish steps with Gemini or Mistral.</div></div>
+    <div class="feat-card"><div class="feat-icon purple">👻</div><div class="feat-title">Ghost Hunt <span class="pro-badge">Pro</span></div><div class="feat-desc">Scan for threads that went cold weeks ago.</div></div>
   </div>
 
   <div class="cta-footer">
     <h2>Get Backstop.</h2>
-    <p>Free to install. For CSMs, founders, AEs, and recruiters managing relationships that actually matter.</p>
+    <p>Free to install. For CSMs, founders, AEs, and anyone managing relationships that actually matter.</p>
     <a href="BackstopHowTo.html" class="btn-primary">⬇ Add to Chrome — Free</a>
+    
+    <div class="beta-contact">
+        <h3>🚨 Beta Registration Required</h3>
+        <p>To use Backstop, I must manually whitelist your email in the Google Console. Please <strong>send me your testing email</strong> after installing so I can grant you access.</p>
+    </div>
+    
+    <div style="font-size: 11px; color: var(--text3); margin-top: 16px;">Works on any Gmail thread · No CRM required</div>
   </div>
 
 </div>
